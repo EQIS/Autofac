@@ -101,8 +101,6 @@ namespace Autofac.Core.Resolving
         /// <exception cref="ArgumentNullException"/>
         public object GetOrCreateInstance(ISharingLifetimeScope currentOperationScope, ResolveRequest request)
         {
-            if (_ended) throw new ObjectDisposedException(ResolveOperationResources.TemporaryContextDisposed, innerException: null);
-
             ++_callDepth;
 
             if (_activationStack.Count > 0)
